@@ -1,6 +1,6 @@
 
 const UserPage = () => {
-  return <div></div>;
+    return <div></div>;
 };
 
 export default UserPage;

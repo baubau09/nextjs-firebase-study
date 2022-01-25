@@ -1,6 +1,6 @@
 
 const AdminPostEdit = () => {
-  return <div>Anything else</div>;
+    return <div>Anything else</div>;
 };
 
 export default AdminPostEdit;
