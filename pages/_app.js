@@ -2,31 +2,14 @@ import Navbar from '../components/Navbar'
 import '../styles/globals.css'
 import { UserContext } from '../lib/context'
 import { Toaster } from 'react-hot-toast'
-import { useEffect, useState } from 'react'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { auth, firestore } from '../lib/firebase'
-import { doc, onSnapshot, getFirestore } from 'firebase/firestore';
+import { useUserData } from '../lib/hooks'
 
 function MyApp({ Component, pageProps }) {
-    const [user] = useAuthState(auth)
-    const [user, username] = useState(null)
-
-    useEffect(() => {
-        let unsubscribe;
-
-        if (user) {
-            const ref = doc(getFirestore(), 'users', user.uid)
-        }
-
-        return () => {
-            second;
-        };
-    }, [third]);
-
+    const userData = useUserData()
 
     return (
         <>
-            <UserContext.Provider value={{ user: {}, username: 'jeff123' }}>
+            <UserContext.Provider value={userData}>
                 <Navbar />
                 <Component {...pageProps} />
                 <Toaster />
